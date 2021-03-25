@@ -1,0 +1,13 @@
+## Read input as specified in the question.
+## Print output as specified in the question.
+#Initialize array
+
+
+#Loop for taking elements
+n=int(input())
+arr=list(int(i) for i in input().split())
+result=0
+for number in arr:
+    result+=number
+print(result)
+    
