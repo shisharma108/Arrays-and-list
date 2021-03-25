@@ -1,0 +1,7 @@
+## Read input as specified in the question.
+## Print output as specified in the question.
+#Initialize array     
+lst = []
+num = int(input())
+lst = [int(x) for x in input().split()]
+print(sum(lst))
