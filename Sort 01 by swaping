@@ -1,0 +1,48 @@
+from sys import stdin
+#Keep two pointers ‘zeroPos’ for the next location of a 0, and ‘current’ for the
+current element that we’re iterating through. Both of them will be initialised to 0
+
+#. Start iterating through the array. If we encounter a 1, we’ll do nothing. Just
+increase ‘current’ by 1. If we counter a 0, we need to push this zero to the front of
+the array. More specifically, we need to send this zero to zeroPos and bring
+zeroPos’ element to the current location. So basically we do swap(arr[zeroPos], arr[current]). And then we increase ‘current’ by 1
+and increase ‘zeroPos’ by 1 too.
+
+def sortZeroesAndOne(arr, n) :
+    nextZero=0
+    for i in range(n):
+        if arr[i]==0:
+            
+            arr[i],arr[nextZero]=arr[nextZero],arr[i]
+            nextZero+=1
+            
+            
+#Taking Input Using Fast I/O
+def takeInput() :
+    n = int(stdin.readline().strip())
+
+    if n == 0 :
+        return list(), 0
+
+    
+    arr = list(map(int, stdin.readline().strip().split(" ")))
+    return arr, n
+
+
+def printList(arr, n) :
+    for i in range(n) :
+        print(arr[i], end = ' ')
+    print()
+
+
+#main
+t = int(stdin.readline().strip())
+
+while t > 0 :
+    
+    arr, n = takeInput()
+    sortZeroesAndOne(arr, n)
+    printList(arr, n)
+    print()
+
+    t -= 1
