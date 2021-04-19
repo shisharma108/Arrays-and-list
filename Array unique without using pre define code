@@ -1,0 +1,20 @@
+def uniqueElement(li,n):
+    for i in range(0, len(li)):
+        t=True
+        for j in range(0, len(li)):
+            if i != j and li[i]==li[j]:
+                t=False
+                break
+        if t==True:
+            return li[i]
+                
+            
+            
+t = int(input())
+while t>0:
+    n = int(input())
+    li = [int(x) for x in input().split()]
+    
+    t = t-1
+    print(uniqueElement(li,n))
+    
